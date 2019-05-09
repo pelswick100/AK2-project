@@ -1,6 +1,6 @@
 # AK2-project
- Kalkulator zmiennoprzecinkowy 64-bitowy napisany za pomocą biblitoeki QT w języku Assmebler oraz C++.\n
- Kalkulator będzie wykonywał następujące działania:
+ Kalkulator zmiennoprzecinkowy 64-bitowy napisany za pomocą biblitoeki QT w języku Assmebler oraz C++. <br />
+ Kalkulator będzie wykonywał następujące działania: < br/>
   - dodawanie
   - odejmowanie
   - mnożenie
@@ -12,8 +12,8 @@
   - funkcja sinus
   - funkcja cosinus
   - funkcja tangens
-  - funkcja cotangens
-  I tylko dla całkowitych:
+  - funkcja cotangens <br/>
+  I tylko dla całkowitych: <br />
   - silnia
   - NWD
   - NWW
