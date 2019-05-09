@@ -7,10 +7,11 @@
   - dzielenie
   - pierwiastek kwadratowy
   - potęgowanie
-  - funkcja logarytmiczna
+  - funkcja logarytmiczna (log)
   - funkcja sinus
   - funkcja cosinus
   - funkcja tangens
   - funkcja cotangens
   - NWD
   - NWW
+  - ln
