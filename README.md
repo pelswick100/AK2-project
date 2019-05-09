@@ -8,10 +8,12 @@
   - pierwiastek kwadratowy
   - potęgowanie
   - funkcja logarytmiczna (log)
+  - ln
   - funkcja sinus
   - funkcja cosinus
   - funkcja tangens
   - funkcja cotangens
+  I tylko dla całkowitych:
+  - silnia
   - NWD
   - NWW
-  - ln
