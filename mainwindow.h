@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QString>
+#include <string>
 
 namespace Ui {
 class MainWindow;
@@ -14,6 +16,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void ustawianiekropki();
 
 private slots:
     void on_znak1_clicked();
@@ -58,9 +61,18 @@ private slots:
 
     void on_znakrowna_clicked();
 
+    void on_znakujemny_clicked();
+
 private:
     Ui::MainWindow *ui;
-    bool czykropka;
+    bool czypierwszyarg;
+    bool argument1dod;
+    bool argument2dod;
+    bool bylakropka;
+    int operacja;
+    QString argument1;
+    QString argument2;
+    QString dzialanie;
 };
 
 #endif // MAINWINDOW_H
