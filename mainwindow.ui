@@ -137,7 +137,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>C</string>
+     <string>CE</string>
     </property>
    </widget>
    <widget class="QPushButton" name="znak9">
