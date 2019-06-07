@@ -63,6 +63,20 @@ private slots:
 
     void on_znakujemny_clicked();
 
+    void on_znakxdoy_clicked();
+
+    void startowa_konfiguracja();
+
+    void tylko_clear_konfiguracja();
+
+    void drugi_argument_konfiguracja();
+
+    void aktywuj_dzialania_konfiguracja();
+
+    void on_znaksqrt_clicked();
+
+    void on_znaklog2_clicked();
+
 private:
     Ui::MainWindow *ui;
     bool czypierwszyarg;
