@@ -24,6 +24,29 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // konfiguracja oblslugi aplikacji klawiatura
+    ui->znak0->setShortcut(QKeySequence(Qt::Key_0));
+    ui->znak1->setShortcut(QKeySequence(Qt::Key_1));
+    ui->znak2->setShortcut(QKeySequence(Qt::Key_2));
+    ui->znak3->setShortcut(QKeySequence(Qt::Key_3));
+    ui->znak4->setShortcut(QKeySequence(Qt::Key_4));
+    ui->znak5->setShortcut(QKeySequence(Qt::Key_5));
+    ui->znak6->setShortcut(QKeySequence(Qt::Key_6));
+    ui->znak7->setShortcut(QKeySequence(Qt::Key_7));
+    ui->znak8->setShortcut(QKeySequence(Qt::Key_8));
+    ui->znak9->setShortcut(QKeySequence(Qt::Key_9));
+
+    ui->znakplus->setShortcut(QKeySequence(Qt::Key_Plus));
+    ui->znakminus->setShortcut(QKeySequence(Qt::Key_Minus));
+    ui->znakmnoz->setShortcut(QKeySequence(Qt::Key_Asterisk));
+    ui->znakdziel->setShortcut(QKeySequence(Qt::Key_Slash));
+    //ui->znakrowna->setShortcut(QKeySequence(Qt::Key_Equal));
+    ui->znakrowna->setShortcut(QKeySequence(Qt::Key_Return)); // znak rownosci dziala pod klawiszem Enter
+    ui->znakkropka->setShortcut(QKeySequence(Qt::Key_Period));
+
+    ui->znakbksp->setShortcut(QKeySequence(Qt::Key_Backspace));
+    ui->znakclear->setShortcut(QKeySequence(Qt::Key_Delete));
+
     startowa_konfiguracja();
 }
 
