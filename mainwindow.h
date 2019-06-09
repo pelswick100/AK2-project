@@ -77,6 +77,12 @@ private slots:
 
     void on_znaklog2_clicked();
 
+    void on_znakedox_clicked();
+
+    void on_znakbksp_clicked();
+
+    void on_znakxdo2_clicked();
+
 private:
     Ui::MainWindow *ui;
     bool czypierwszyarg;

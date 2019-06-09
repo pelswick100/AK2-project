@@ -13,7 +13,9 @@ extern "C" double tangens(double argument1);
 extern "C" double cotangens(double argument1);
 extern "C" double xdoy(double argument1, double argument2);
 extern "C" double sqrt(double argument1);
-extern "C" double log_2(double argument2, double argument1);
+extern "C" double log_2(double argument1, double argument2);
+extern "C" double edox(int argument1, double argument2);
+extern "C" double xdo2(double argument1);
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -43,6 +45,8 @@ void MainWindow::startowa_konfiguracja()
     ui->znakxdoy->setEnabled(false);
     ui->znaksqrt->setEnabled(false);
     ui->znaklog2->setEnabled(false);
+    ui->znakedox->setEnabled(false);
+    ui->znakxdo2->setEnabled(false);
     ui->znakkropka->setEnabled(false);
     ui->znakrowna->setEnabled(false);
     ui->znak0->setEnabled(true);
@@ -56,6 +60,7 @@ void MainWindow::startowa_konfiguracja()
     ui->znak8->setEnabled(true);
     ui->znak9->setEnabled(true);
     ui->znakujemny->setEnabled(true);
+    ui->znakbksp->setEnabled(true);
     ui->znakclear->setEnabled(true);
 
     czypierwszyarg=true;
@@ -82,6 +87,8 @@ void MainWindow::tylko_clear_konfiguracja()
     ui->znakxdoy->setEnabled(false);
     ui->znaksqrt->setEnabled(false);
     ui->znaklog2->setEnabled(false);
+    ui->znakedox->setEnabled(false);
+    ui->znakxdo2->setEnabled(false);
     ui->znakkropka->setEnabled(false);
     ui->znakrowna->setEnabled(false);
     ui->znak0->setEnabled(false);
@@ -95,6 +102,7 @@ void MainWindow::tylko_clear_konfiguracja()
     ui->znak8->setEnabled(false);
     ui->znak9->setEnabled(false);
     ui->znakujemny->setEnabled(false);
+    ui->znakbksp->setEnabled(false);
     ui->znakclear->setEnabled(true);
 }
 
@@ -111,6 +119,8 @@ void MainWindow::drugi_argument_konfiguracja()
     ui->znakxdoy->setEnabled(false);
     ui->znaksqrt->setEnabled(false);
     ui->znaklog2->setEnabled(false);
+    ui->znakedox->setEnabled(false);
+    ui->znakxdo2->setEnabled(false);
     ui->znakkropka->setEnabled(false);
     ui->znakrowna->setEnabled(false);
 
@@ -134,6 +144,8 @@ void MainWindow::aktywuj_dzialania_konfiguracja()
     ui->znakxdoy->setEnabled(true);
     ui->znaksqrt->setEnabled(true);
     ui->znaklog2->setEnabled(true);
+    ui->znakedox->setEnabled(true);
+    ui->znakxdo2->setEnabled(true);
 }
 
 void MainWindow::on_znakplus_clicked()
@@ -148,7 +160,7 @@ void MainWindow::on_znakplus_clicked()
 void MainWindow::on_znakminus_clicked()
 {
     operacja=2;
-    dzialanie=argument1+ " - ";
+    dzialanie=argument1+ " − ";
     ui->ekran2->setText(QString(dzialanie));
 
     drugi_argument_konfiguracja();
@@ -157,7 +169,7 @@ void MainWindow::on_znakminus_clicked()
 void MainWindow::on_znakmnoz_clicked()
 {
     operacja=3;
-    dzialanie=argument1+ " * ";
+    dzialanie=argument1+ " × ";
     ui->ekran2->setText(QString(dzialanie));
 
     drugi_argument_konfiguracja();
@@ -166,7 +178,7 @@ void MainWindow::on_znakmnoz_clicked()
 void MainWindow::on_znakdziel_clicked()
 {
     operacja=4;
-    dzialanie=argument1+" / ";
+    dzialanie=argument1+" ÷ ";
     ui->ekran2->setText(QString(dzialanie));
 
     drugi_argument_konfiguracja();
@@ -505,7 +517,7 @@ void MainWindow::on_znakrowna_clicked()
         wynik = xdoy(arg2, arg1);
     }
 
-    dzialanie=dzialanie+argument2+" = ";
+    dzialanie=dzialanie+"("+argument2+") = ";
     ui->ekran->setText(QString::number(wynik));
     ui->ekran2->setText(QString(dzialanie));
 
@@ -548,23 +560,12 @@ void MainWindow::on_znakujemny_clicked()
 
 void MainWindow::on_znakxdoy_clicked()
 {
-    double arg1=argument1.toDouble();
-    if(arg1 <= 0) // nie akceptujemy podstawy ujemnej
-    {
-        ui->ekran->setText(QString("Podstawa potęgi powinna być dodatnia"));
+    operacja=5; // 5 oznacza operację potęgowania
+    dzialanie=argument1+ " · 2^ ";
+    ui->ekran2->setText(QString(dzialanie));
 
-        tylko_clear_konfiguracja();
-    }
-    else
-    {
-        operacja=5; // 5 oznacza operację potęgowania
-        dzialanie=argument1+ " * 2 ^ ";
-        ui->ekran2->setText(QString(dzialanie));
-
-        drugi_argument_konfiguracja();
-    }
+    drugi_argument_konfiguracja();
 }
-
 
 
 void MainWindow::on_znaksqrt_clicked()
@@ -588,7 +589,7 @@ void MainWindow::on_znaksqrt_clicked()
         ui->ekran->setText(QString::number(wynik));
     }
 
-    dzialanie="sqrt("+initialArg+")";
+    dzialanie="√"+initialArg+"";
     ui->ekran2->setText(QString(dzialanie));
 
 
@@ -615,3 +616,72 @@ void MainWindow::on_znaklog2_clicked()
     }
 
 }
+
+void MainWindow::on_znakedox_clicked()
+{
+    double arg1=argument1.toDouble();
+    double wynik = edox(20, arg1);
+    ui->ekran->setText(QString::number(wynik));
+    dzialanie="e^("+argument1+")";
+    ui->ekran2->setText(QString(dzialanie));
+
+    tylko_clear_konfiguracja();
+
+}
+
+void MainWindow::on_znakxdo2_clicked()
+{
+    double arg1=argument1.toDouble();
+    double wynik = xdo2(arg1);
+    ui->ekran->setText(QString::number(wynik));
+    if(arg1 < 0)
+    {
+        dzialanie="("+argument1+")^2";
+    }
+    else
+    {
+        dzialanie=""+argument1+"^2";
+    }
+    ui->ekran2->setText(QString(dzialanie));
+
+    tylko_clear_konfiguracja();
+}
+
+
+void MainWindow::on_znakbksp_clicked()
+{
+    if(czypierwszyarg)
+    {
+        if(argument1.size() > 1) //jesli ciag niepusty (piewszy zawsze jest znak)
+        {
+            if(argument1.size() - 1 >= 1 && argument1[argument1.size() - 1] == '.')
+            {
+                bylakropka = false;
+                ui->znakkropka->setEnabled(true);
+            }
+
+            argument1.truncate(argument1.size() - 1);
+            ui->ekran->setText(QString(argument1));
+
+            if(argument1.size() == 1) // jesli zostal tylko znak
+            {
+                startowa_konfiguracja();
+            }
+        }
+    }
+    else
+    {
+        if(argument2.size() > 1) //jesli ciag niepusty (piewszy zawsze jest znak)
+        {
+            if(argument2.size() - 1 >= 1 && argument2[argument2.size() - 1] == '.')
+            {
+                bylakropka = false;
+                ui->znakkropka->setEnabled(true);
+            }
+
+            argument2.truncate(argument2.size() - 1);
+            ui->ekran->setText(QString(argument2));
+        }
+    }
+}
+

@@ -10,19 +10,19 @@
     <x>0</x>
     <y>0</y>
     <width>512</width>
-    <height>541</height>
+    <height>550</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>335</width>
-    <height>462</height>
+    <width>512</width>
+    <height>550</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>100000</width>
-    <height>100000</height>
+    <width>512</width>
+    <height>550</height>
    </size>
   </property>
   <property name="cursor">
@@ -143,9 +143,9 @@
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>400</y>
+      <y>460</y>
       <width>71</width>
-      <height>111</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -227,7 +227,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>-</string>
+     <string>−</string>
     </property>
    </widget>
    <widget class="QPushButton" name="znakdziel">
@@ -240,7 +240,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>/</string>
+     <string>÷</string>
     </property>
    </widget>
    <widget class="QPushButton" name="znakmnoz">
@@ -253,16 +253,16 @@
      </rect>
     </property>
     <property name="text">
-     <string>*</string>
+     <string>×</string>
     </property>
    </widget>
    <widget class="QPushButton" name="znakrowna">
     <property name="geometry">
      <rect>
       <x>340</x>
-      <y>400</y>
+      <y>460</y>
       <width>71</width>
-      <height>111</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -279,7 +279,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>sinx</string>
+     <string>sin(x)</string>
     </property>
    </widget>
    <widget class="QPushButton" name="znakcos">
@@ -292,7 +292,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>cosx</string>
+     <string>cos(x)</string>
     </property>
    </widget>
    <widget class="QPushButton" name="znaktg">
@@ -305,7 +305,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>tgx</string>
+     <string>tg(x)</string>
     </property>
    </widget>
    <widget class="QPushButton" name="znakctg">
@@ -318,7 +318,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>ctgx</string>
+     <string>ctg(x)</string>
     </property>
    </widget>
    <widget class="QPushButton" name="znakujemny">
@@ -331,7 +331,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>+  -</string>
+     <string>+  −</string>
     </property>
    </widget>
    <widget class="QLabel" name="ekran2">
@@ -360,14 +360,14 @@
      </rect>
     </property>
     <property name="text">
-     <string>x*2^y</string>
+     <string>x·2^y</string>
     </property>
    </widget>
    <widget class="QPushButton" name="znaksqrt">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>340</y>
+      <x>340</x>
+      <y>400</y>
       <width>71</width>
       <height>51</height>
      </rect>
@@ -387,6 +387,45 @@
     </property>
     <property name="text">
      <string>log_2</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="znakedox">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>340</y>
+      <width>71</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>e^x</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="znakbksp">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>400</y>
+      <width>71</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>⌫</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="znakxdo2">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>340</y>
+      <width>71</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>x^2</string>
     </property>
    </widget>
   </widget>
