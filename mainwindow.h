@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QString>
 #include <string>
+#include <second.h>
 
 namespace Ui {
 class MainWindow;
@@ -83,6 +84,8 @@ private slots:
 
     void on_znakxdo2_clicked();
 
+    void on_znakwiecej_clicked();
+
 private:
     Ui::MainWindow *ui;
     bool czypierwszyarg;
@@ -93,6 +96,7 @@ private:
     QString argument1;
     QString argument2;
     QString dzialanie;
+    Second w1;
 };
 
 #endif // MAINWINDOW_H

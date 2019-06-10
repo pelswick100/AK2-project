@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "second.h"
 #include "ui_mainwindow.h"
 #include "iostream"
 #include "string"
@@ -708,3 +709,8 @@ void MainWindow::on_znakbksp_clicked()
     }
 }
 
+
+void MainWindow::on_znakwiecej_clicked()
+{
+    w1.show();
+}
